@@ -1,0 +1,13 @@
+This bug occurs when using the Expo CLI to build an Android APK.  The build process fails with an error related to the Android Gradle Plugin version. Specifically, the error message indicates a mismatch or incompatibility between the plugin version required by the Expo project and the version available in the Android environment.
+
+```bash
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/path/to/your/project/android/app/build.gradle' line: 21
+
+* What went wrong:
+Could not determine java version from '/path/to/java/jdk'.
+```
+
+This is often due to environment configuration issues, incorrect Gradle settings, or conflicts with other Android projects or SDK installations.
