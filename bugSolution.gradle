@@ -1,0 +1,28 @@
+The solution involves correctly configuring the Android Gradle Plugin version and ensuring a proper Java Development Kit (JDK) setup. Modify your `android/app/build.gradle` file as follows, ensuring the plugin version is compatible with your project and your Android Studio installation.  Additionally, confirm that your JAVA_HOME environment variable points to a valid JDK installation.
+
+```gradle
+// ... other Gradle settings
+
+buildscript {
+    ext.kotlin_version = "1.8.22"
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.1.2") //Specify a compatible version here
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+    }
+}
+
+// ... rest of the Gradle file
+```
+
+Verify that the JAVA_HOME environment variable is set correctly:
+
+```bash
+echo $JAVA_HOME
+```
+This should point to a valid JDK directory.
+
+If needed, update your Android SDK and build tools to ensure compatibility.
